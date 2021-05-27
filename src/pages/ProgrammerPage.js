@@ -28,7 +28,7 @@ export default function ProgrammerPage({changePage}) {
         })
       }
       <br />
-      <button className='btn btn-next' onClick={changePage}>View Programmers</button>
+      <button className='btn btn-next' onClick={changePage}>View Artists</button>
     </div>
   )
 }
