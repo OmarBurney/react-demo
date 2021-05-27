@@ -1,14 +1,16 @@
-import Artist from './component/Artist'
+import { useState } from "react";
+import ArtistPage from "./pages/ArtistPage";
+import ProgrammerPage from "./pages/ProgrammerPage";
 
 function App() {
-  return (
-    <div> 
-      <h1>Famous Artist of All Time</h1>
-      <Artist text='Vincent Van Gogh'/>
-      <Artist text='Leonardo Da Vinci'/>
-      <Artist text='Claude Monet'/>
-    </div>
-  );
+  const [people, setPeople] = useState('artists')
+
+  switch(people) {
+    case 'artists':
+      return <ArtistPage changePage={() =>{ setPeople('programmers') }}/>
+    case 'programmers':
+      return <ProgrammerPage changePage={() =>{ setPeople('artists') }}/>
+  }
 }
 
 export default App;

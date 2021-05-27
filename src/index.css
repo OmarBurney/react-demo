@@ -8,7 +8,8 @@ body {
   background-color: #dfdfdf;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #333333;
 }
 
@@ -21,6 +22,10 @@ h1, h2 {
   color: white;
   border: 1px solid #800040;
   margin: 0 1rem;
+}
+
+.btn-next {
+  margin: 0;
 }
 
 .btn:hover {
@@ -71,3 +76,9 @@ h1, h2 {
   top: 0;
   left: 0;
 }
+
+.youtubeVideo {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+

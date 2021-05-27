@@ -2,9 +2,9 @@ import {useState} from 'react'
 import Modal from './Modal'
 import Backdrop from './Backdrop'
 
-function Artist(props){
+function Artist({text, video}){
 
-    const[modalIsOpen, setModalsOpen]=useState(false);
+    const[modalIsOpen, setModalsOpen] = useState(false);
 
     function learnMoreHandler(){
        setModalsOpen(true);
@@ -17,13 +17,13 @@ function Artist(props){
     return(
 
         <div className='card'>
-        <h2>{props.text}</h2>
+        <h2>{text}</h2>
         <div className='actions'> 
           <button className='btn' onClick={learnMoreHandler}>Learn More</button>
         </div>
 
-        {modalIsOpen?<Modal onGoBack={closeModalHandler}/>:null}
-        {modalIsOpen?<Backdrop onClick={closeModalHandler}/>:null}
+        {modalIsOpen ? <Modal name={text} videoLink={video} onGoBack={closeModalHandler}/> : null}
+        {modalIsOpen ? <Backdrop onClick={closeModalHandler}/> : null}
 
       </div>
     )
